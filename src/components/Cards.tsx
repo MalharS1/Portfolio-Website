@@ -22,32 +22,32 @@ function Cards({ id_nav }: CardsProps) {
     const projects: ProjectProperties[] = [
         {
             id: 0,
-            front_img_path: "/src/assets/card_front_img/mobile_dev.png",
-            back_img_path: "/src/assets/card_back_img/phone_big.png",
+            front_img_path: "/assets/card_front_img/mobile_dev.png",
+            back_img_path: "/assets/card_back_img/phone_big.png",
             title: "Mobile Application Development",
             git_link: "https://github.com/MalharS1/Mobile-Application-Development",
             description: "UniFood is a mobile application designed for post-secondary students to centralize services like grocery shopping, meal planning, and nutrition tracking into a single platform. Powered by APIs such as Firestore and Nutritionix, it provides a seamless experience for busy students looking to organize their meals and groceries efficiently."
         },
         {
             id: 1,
-            front_img_path: "/src/assets/card_front_img/co2_emissions.png",
-            back_img_path: "/src/assets/card_back_img/data_big.png",
+            front_img_path: "/assets/card_front_img/co2_emissions.png",
+            back_img_path: "/assets/card_back_img/data_big.png",
             title: "Data Analysis Project",
             git_link: "https://github.com/MalharS1/Data-Analysis-Project",
             description: "This project analyzes and interprets CO2 emissions data from 1995 to 2018. Some techniques include, but are not limited to data exploration, data analysis and trend recognition. The following report determines trends for all countries, but more specifically Canada with the use of Pandas for data manipulation and Seaborn for visualization"
         },
         {
             id: 2,
-            front_img_path: "/src/assets/card_front_img/server.png",
-            back_img_path: "/src/assets/card_back_img/web_soc_big.png",
+            front_img_path: "/assets/card_front_img/server.png",
+            back_img_path: "/assets/card_back_img/web_soc_big.png",
             title: "Interactive Web Sockets",
             git_link: "https://github.com/MalharS1/Interactive-Web-Sockets",
             description: "Features a dynamic simulated virtual classroom application that allows users to create and/or join chat rooms to communicate with each other in real time via messages. Some additional features to enhance the users' experience include things such as a Tic-Tac-Toe game, a White board (to draw/take notes), a To-Do list (add/manage tasks), and a number guessing game (for some memes/to relieve stress)."
         },
         {
             id: 3,
-            front_img_path: "/src/assets/card_front_img/rocket.png",
-            back_img_path: "/src/assets/card_back_img/rocket_big.png",
+            front_img_path: "/assets/card_front_img/rocket.png",
+            back_img_path: "/assets/card_back_img/rocket_big.png",
             title: "PyGame Rocket Simulation",
             git_link: "https://github.com/MalharS1/PyGame-Rocket-Simulation",
             description: "This Py-Game project aims to examine a simplified version of a rocket simulation. While an exact replica of a rocket simulation would be out of the scope for third-year Computer Science student, a simplified version still addresses much of the physics behind rocket simulations."
