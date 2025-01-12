@@ -1,0 +1,61 @@
+/* Use existing styles */
+.mesh-bg {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.dot-grid {
+    /* Dot grid */
+    background-image: radial-gradient(#ffffff 0.1%, transparent 0.6%);
+    background-color: rgb(0, 0, 0);
+    background-size: 30px 30px;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.gradient-bg {
+    /* Mouse-following gradient */
+    background-image: radial-gradient(circle at var(--x) var(--y),
+            rgba(47, 93, 232, 0.15) 5%,
+            transparent 20%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+
+/* Add shooting star styles */
+.shooting-star {
+    position: absolute;
+    width: 2px;
+    /* Width of the star */
+    height: 80px;
+    /* Length of the star */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+    /* Gradient for star trail */
+    transform: rotate(45deg);
+    /* Shooting star angle */
+    animation: shooting 1.5s linear forwards;
+    /* Animation duration changes dynamically */
+}
+
+@keyframes shooting {
+    from {
+        opacity: 0;
+        transform: translate(200px, -200px) rotate(45deg);
+        /* Moves diagonally */
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0) rotate(45deg);
+    }
+}
