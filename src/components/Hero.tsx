@@ -109,14 +109,14 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
     }
 
     const icons: IconProperties[] = [
-        { id: 0, icon_path: "src/assets/skills_icons/python.webp", title: "Python" },
-        { id: 1, icon_path: "src/assets/skills_icons/c_plus_plus.png", title: "C++" },
-        { id: 2, icon_path: "src/assets/skills_icons/c.png", title: "C" },
-        { id: 3, icon_path: "src/assets/skills_icons/java.png", title: "Java" },
-        { id: 4, icon_path: "src/assets/skills_icons/react.webp", title: "React" },
-        { id: 5, icon_path: "src/assets/skills_icons/tailwind.webp", title: "Tailwind CSS" },
-        { id: 6, icon_path: "src/assets/skills_icons/framer.png", title: "Framer-motion" },
-        { id: 7, icon_path: "src/assets/skills_icons/ts.png", title: "Typescript" },
+        { id: 0, icon_path: "/assets/skills_icons/python.webp", title: "Python" },
+        { id: 1, icon_path: "/assets/skills_icons/c_plus_plus.png", title: "C++" },
+        { id: 2, icon_path: "/assets/skills_icons/c.png", title: "C" },
+        { id: 3, icon_path: "/assets/skills_icons/java.png", title: "Java" },
+        { id: 4, icon_path: "/assets/skills_icons/react.webp", title: "React" },
+        { id: 5, icon_path: "/assets/skills_icons/tailwind.webp", title: "Tailwind CSS" },
+        { id: 6, icon_path: "/assets/skills_icons/framer.png", title: "Framer-motion" },
+        { id: 7, icon_path: "/assets/skills_icons/ts.png", title: "Typescript" },
     ];
 
     return (
