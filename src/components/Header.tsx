@@ -1,12 +1,13 @@
 import { motion, useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Link } from "react-scroll"; // used to help with scrolling to section on page
+import { Link as RouterLink } from "react-router-dom"; // React Router Link for page navigation
+import { Link as ScrollLink } from "react-scroll"; // react-scroll Link for smooth scrolling
 import Hero from "./Hero";
 
 interface NavigationProperties {
     id: number;
     title: string;
-    link?: string;
+    link: string;
     side: "left" | "center" | "right";
 }
 
@@ -15,8 +16,8 @@ function Header() {
         { id: 0, title: "Home", link: "home", side: "left" },
         { id: 1, title: "Projects", link: "projects", side: "right" },
         { id: 2, title: "Contact", link: "contact", side: "left" },
-        { id: 3, title: "|", link: "", side: "center" },
-        { id: 4, title: "Side Projects", link: "", side: "right" },
+        { id: 3, title: "|", link: "#", side: "center" },
+        { id: 4, title: "Side Projects", link: "/side-projects", side: "right" },
     ];
 
     // to get scroll progress and update for checking (to update nav bar background)
@@ -74,6 +75,7 @@ function Header() {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
             >
                 {navigation.map((nav_item) =>
+
                     // to have no link for separator
                     nav_item.title === "|" ? (
                         <motion.nav key={nav_item.id} variants={navItemVariants[nav_item.side]} initial="initial" animate="animate">
@@ -98,14 +100,27 @@ function Header() {
                                 duration: 0.5,
                             }}
                         >
-                            <Link
-                                to={nav_item.link || "#"}
-                                smooth={true}
-                                duration={500}
-                                className="cursor-pointer"
-                            >
-                                {nav_item.title}
-                            </Link>
+                            {nav_item.title === "Side Projects" ? (
+                                <>
+                                    <RouterLink to={nav_item.link} className="cursor-pointer" >
+                                        {nav_item.title}
+                                    </RouterLink>
+
+                                    {/* remove later  */}
+                                    <span className="absolute -translate-x-[155px] translate-y-[20px] w-[100%] rotate-[10deg] border-2"></span>
+                                    <span className="absolute -translate-x-[155px] translate-y-[20px] w-[100%] -rotate-[10deg] border-2"></span>
+                                </>
+
+                            ) : (
+                                <ScrollLink
+                                    to={nav_item.link}
+                                    smooth={true}
+                                    duration={500}
+                                    className="cursor-pointer"
+                                >
+                                    {nav_item.title}
+                                </ScrollLink>
+                            )}
                         </motion.nav>
                     )
                 )}
