@@ -138,7 +138,7 @@ function Contact({ id_nav }: ContactProps) {
                         </div>
                         <div className="flex justify-between w-full icnGrp">
                             <p className="Iline text-left">Resume:</p>
-                            <a className="icn text-2xl text-right" href="" download>
+                            <a className="icn text-2xl text-right" href="/assets/Resume.pdf" download>
                                 <FaFileDownload />
                             </a>
                         </div>

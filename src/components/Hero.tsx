@@ -167,8 +167,8 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
                                 className="cursor-pointer underline text-blue-400"
                             >
                                 Contact Form
-                            </Link>{" "}
-                            below.
+                            </Link>
+                            {" "}below.
                         </p>
                     </motion.span>
 
