@@ -21,6 +21,7 @@ interface IconProperties {
     id: number;
     icon_path: string;
     title: string;
+    link: string;
 }
 
 // WaveText component for animated text
@@ -109,14 +110,24 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
     }
 
     const icons: IconProperties[] = [
-        { id: 0, icon_path: "/assets/skills_icons/python.webp", title: "Python" },
-        { id: 1, icon_path: "/assets/skills_icons/c_plus_plus.png", title: "C++" },
-        { id: 2, icon_path: "/assets/skills_icons/c.png", title: "C" },
-        { id: 3, icon_path: "/assets/skills_icons/java.png", title: "Java" },
-        { id: 4, icon_path: "/assets/skills_icons/react.webp", title: "React" },
-        { id: 5, icon_path: "/assets/skills_icons/tailwind.webp", title: "Tailwind CSS" },
-        { id: 6, icon_path: "/assets/skills_icons/framer.png", title: "Framer-motion" },
-        { id: 7, icon_path: "/assets/skills_icons/ts.png", title: "Typescript" },
+
+        // Outer Circle
+        { id: 0, icon_path: "/assets/skills_icons/python.webp", title: "Python", link: "https://www.python.org/" },
+        { id: 1, icon_path: "/assets/skills_icons/c_plus_plus.png", title: "C++", link: "https://devdocs.io/cpp/" },
+        { id: 2, icon_path: "/assets/skills_icons/c.png", title: "C", link: "https://devdocs.io/c/" },
+        { id: 3, icon_path: "/assets/skills_icons/git.png", title: "Github", link: "https://github.com/" },
+        { id: 4, icon_path: "/assets/skills_icons/vitejs.svg", title: "Vite", link: "https://vite.dev/" },
+        { id: 5, icon_path: "/assets/skills_icons/react.webp", title: "React", link: "https://react.dev/" },
+        { id: 6, icon_path: "/assets/skills_icons/tailwind.webp", title: "Tailwind CSS", link: "https://tailwindcss.com/" },
+        { id: 7, icon_path: "/assets/skills_icons/framer.png", title: "Framer-motion", link: "https://motion.dev/" },
+        { id: 8, icon_path: "/assets/skills_icons/ts.png", title: "Typescript", link: "https://www.typescriptlang.org/" },
+
+        // Inner Circle
+        { id: 9, icon_path: "/assets/skills_icons/java.png", title: "Java", link: "https://www.java.com/en/" },
+        { id: 10, icon_path: "/assets/skills_icons/linux.png", title: "Linux", link: "https://www.linux.org/" },
+        { id: 11, icon_path: "/assets/skills_icons/postgresql.png", title: "PostgreSQL", link: "https://www.postgresql.org/" },
+        { id: 12, icon_path: "/assets/skills_icons/flutter.png", title: "Flutter", link: "https://flutter.dev/" },
+        { id: 13, icon_path: "/assets/skills_icons/dart.png", title: "Dart", link: "https://dart.dev/" },
     ];
 
     return (
@@ -162,8 +173,8 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
                     </motion.span>
 
                     {/* Skills (entire wheel including middle icon) */}
-                    <div className="flex relative left-1/2 top-[10%] w-[22rem] aspect-square border border-neutral-500 rounded-full translate-x-1/2 -translate-y-[47%]">
-                        <div className="flex w-60 aspect-square m-auto border border-neutral-500 rounded-full">
+                    <div className="flex relative left-1/2 top-[10%] w-[400px] aspect-square border border-neutral-500 rounded-full translate-x-1/3 -translate-y-[47%]">
+                        <div className="flex w-64 aspect-square m-auto border border-neutral-500 rounded-full">
                             <div className="w-[6rem] m-auto p-[0.2rem] aspect-square rounded-full">
                                 <div className="flex flex-col items-center justify-center w-full h-full">
                                     <svg width="0" height="0">
@@ -202,38 +213,53 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
                                 duration: 55,
                                 repeat: Infinity,
                             } : {}}
-                        // onAnimationComplete={() => setstartParagraphAnimation(true)}
                         >
-                            {icons.map((ic, index) => (
-                                <li
-                                    key={ic.id}
-                                    className="absolute group w-12 h-12 origin-center select-none"
-                                    style={{
-                                        transform: `rotate(${index * 45}deg) translateY(-11rem) rotate(-${index * 45}deg)`,
-                                        filter:
-                                            ic.id % 2 === 0
-                                                ? "drop-shadow(1px 1px 0px #B026FF)"
-                                                : "drop-shadow(1px 1px 0px #00FFFF)"
-                                    }}
-                                >
-                                    <motion.div
-                                        className="bg-neutral-700 border-2 border-zinc-500 rounded-xl p-1 w-full h-full select-none"
-                                        animate={startRingAnimation ? { rotate: -360 } : undefined}
-                                        transition={startRingAnimation ? {
-                                            ease: "linear",
-                                            duration: 55,
-                                            repeat: Infinity,
-                                        } : {}}
-                                    >
-                                        <motion.img src={ic.icon_path} className="m-auto select-none" />
-                                        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:flex items-center justify-center select-none">
-                                            <div className="bg-slate-900 font-bold font-customC text-white text-sm rounded px-3 py-1 whitespace-nowrap select-none">
-                                                {ic.title}
-                                            </div>
-                                        </div>
-                                    </motion.div>
-                                </li>
-                            ))}
+                            {icons.map((ic, index) => {
+
+                                const isInnerCircle = index >= 9
+
+                                // if more than 8 icons, go to next row and make sure outer circle is unaffected by more icons
+                                // angle dictates how many icons can be in one circle
+                                const angle = isInnerCircle
+                                    ? index * (360 / (icons.length - 9))
+                                    : index * (360 / Math.min(icons.length, 9));
+
+                                const radius = isInnerCircle ? '8rem' : '12.5rem';
+
+                                return (
+                                    <a href={ic.link} target="blank" className={`absolute group w-12 h-12 origin-center select-none`}>
+                                        <li
+                                            key={ic.id}
+                                            className={`absolute group w-12 h-12 origin-center select-none`}
+                                            style={{
+                                                transform: `rotate(${angle}deg) translateY(-${radius}) rotate(-${angle}deg)`,
+                                                filter:
+                                                    ic.id % 2 === 0
+                                                        ? "drop-shadow(1px 1px 0px #B026FF)"
+                                                        : "drop-shadow(1px 1px 0px #00FFFF)"
+                                            }}
+                                        >
+
+                                            <motion.div
+                                                className="bg-neutral-700 border-2 border-zinc-500 rounded-xl p-1 w-full h-full select-none cursor-pointer"
+                                                animate={startRingAnimation ? { rotate: -360 } : undefined}
+                                                transition={startRingAnimation ? {
+                                                    ease: "linear",
+                                                    duration: 55,
+                                                    repeat: Infinity,
+                                                } : {}}
+                                            >
+                                                <motion.img src={ic.icon_path} className={`m-auto select-none ${ic.title === "Linux" ? "h-10 -translate-y-[2px]" : ""}`} />
+                                                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:flex items-center justify-center select-none">
+                                                    <div className="bg-slate-900 font-bold font-customC text-white text-sm rounded px-3 py-1 whitespace-nowrap select-none">
+                                                        {ic.title}
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        </li>
+                                    </a>
+                                )
+                            })}
                         </motion.ul>
                     </div>
 

@@ -3,13 +3,13 @@ import Cards from './Cards.tsx'
 import Contact from './Contact.tsx'
 import MeshBackground from './Background.tsx'
 import SideProjects from './Side_Projects.tsx'
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";  // HashRouter better for only client side and no server
 
 function App() {
   return (
     <Router>
-      {/* Define the Routes */}
       <Routes>
+
         {/* Default route (Home Page) */}
         <Route
           path="/"
