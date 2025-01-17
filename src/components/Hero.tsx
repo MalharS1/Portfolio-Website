@@ -262,10 +262,7 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
                                                 >
                                                     <motion.img
                                                         src={ic.icon_path}
-                                                        className={`m-auto select-none ${ic.title === "Linux"
-                                                            ? "h-10 -translate-y-[2px]"
-                                                            : ""
-                                                            }`}
+                                                        className={`m-auto select-none ${ic.title === "Linux" ? "h-10 -translate-y-[2px]" : ""} ${ic.title === "Github" ? "translate-y-[1px]" : ""}`}
                                                     />
                                                     {/* Tooltip */}
                                                     <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:flex items-center justify-center select-none">
