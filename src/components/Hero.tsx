@@ -174,6 +174,7 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
 
                     {/* Skills (entire wheel including middle icon) */}
                     <div className="flex relative left-1/2 top-[10%] w-[400px] aspect-square border border-neutral-500 rounded-full translate-x-1/3 -translate-y-[47%]">
+                        {/* Inner Circle (Center Icon) */}
                         <div className="flex w-64 aspect-square m-auto border border-neutral-500 rounded-full">
                             <div className="w-[6rem] m-auto p-[0.2rem] aspect-square rounded-full">
                                 <div className="flex flex-col items-center justify-center w-full h-full">
@@ -204,22 +205,24 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
                             </div>
                         </div>
 
-                        {/* Rotating skills wheel */}
+                        {/* Rotating Skills Wheel */}
                         <motion.ul
                             className="absolute w-full h-full flex items-center justify-center"
                             animate={startRingAnimation ? { rotate: 360 } : {}}
-                            transition={startRingAnimation ? {
-                                ease: "linear",
-                                duration: 55,
-                                repeat: Infinity,
-                            } : {}}
+                            transition={
+                                startRingAnimation
+                                    ? {
+                                        ease: "linear",
+                                        duration: 55,
+                                        repeat: Infinity,
+                                    }
+                                    : {}
+                            }
                         >
                             {icons.map((ic, index) => {
+                                const isInnerCircle = index >= 9;
 
-                                const isInnerCircle = index >= 9
-
-                                // if more than 8 icons, go to next row and make sure outer circle is unaffected by more icons
-                                // angle dictates how many icons can be in one circle
+                                // Angle dictates icon placement
                                 const angle = isInnerCircle
                                     ? index * (360 / (icons.length - 9))
                                     : index * (360 / Math.min(icons.length, 9));
@@ -227,41 +230,58 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
                                 const radius = isInnerCircle ? '8rem' : '12.5rem';
 
                                 return (
-                                    <a href={ic.link} target="blank" className={`absolute group w-12 h-12 origin-center select-none`}>
-                                        <li
-                                            key={ic.id}
-                                            className={`absolute group w-12 h-12 origin-center select-none`}
-                                            style={{
-                                                transform: `rotate(${angle}deg) translateY(-${radius}) rotate(-${angle}deg)`,
-                                                filter:
-                                                    ic.id % 2 === 0
-                                                        ? "drop-shadow(1px 1px 0px #B026FF)"
-                                                        : "drop-shadow(1px 1px 0px #00FFFF)"
-                                            }}
-                                        >
-
-                                            <motion.div
-                                                className="bg-neutral-700 border-2 border-zinc-500 rounded-xl p-1 w-full h-full select-none cursor-pointer"
-                                                animate={startRingAnimation ? { rotate: -360 } : undefined}
-                                                transition={startRingAnimation ? {
-                                                    ease: "linear",
-                                                    duration: 55,
-                                                    repeat: Infinity,
-                                                } : {}}
-                                            >
-                                                <motion.img src={ic.icon_path} className={`m-auto select-none ${ic.title === "Linux" ? "h-10 -translate-y-[2px]" : ""}`} />
-                                                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:flex items-center justify-center select-none">
-                                                    <div className="bg-slate-900 font-bold font-customC text-white text-sm rounded px-3 py-1 whitespace-nowrap select-none">
-                                                        {ic.title}
+                                    <div
+                                        key={ic.id}
+                                        className="absolute group w-12 h-12 select-none"
+                                        style={{
+                                            transform: `rotate(${angle}deg) translateY(-${radius}) rotate(-${angle}deg)`,
+                                            filter:
+                                                ic.id % 2 === 0
+                                                    ? "drop-shadow(1px 1px 0px #B026FF)"
+                                                    : "drop-shadow(1px 1px 0px #00FFFF)",
+                                        }}
+                                    >
+                                        <a href={ic.link} target="_blank" className="group">
+                                            <li className="absolute group w-12 h-12 origin-center select-none">
+                                                <motion.div
+                                                    className="bg-neutral-700 border-2 border-zinc-500 rounded-xl p-1 w-full h-full select-none cursor-pointer"
+                                                    animate={
+                                                        startRingAnimation
+                                                            ? { rotate: -360 }
+                                                            : undefined
+                                                    }
+                                                    transition={
+                                                        startRingAnimation
+                                                            ? {
+                                                                ease: "linear",
+                                                                duration: 55,
+                                                                repeat: Infinity,
+                                                            }
+                                                            : {}
+                                                    }
+                                                >
+                                                    <motion.img
+                                                        src={ic.icon_path}
+                                                        className={`m-auto select-none ${ic.title === "Linux"
+                                                            ? "h-10 -translate-y-[2px]"
+                                                            : ""
+                                                            }`}
+                                                    />
+                                                    {/* Tooltip */}
+                                                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:flex items-center justify-center select-none">
+                                                        <div className="bg-slate-900 font-bold font-customC text-white text-sm rounded px-3 py-1 whitespace-nowrap select-none">
+                                                            {ic.title}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </motion.div>
-                                        </li>
-                                    </a>
-                                )
+                                                </motion.div>
+                                            </li>
+                                        </a>
+                                    </div>
+                                );
                             })}
                         </motion.ul>
                     </div>
+
 
                     {/* Text Continued */}
                     <motion.span className="text-base text-gray-300 w-[50%] -translate-y-40 tracking-wider font-bold"
