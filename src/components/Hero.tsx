@@ -155,11 +155,10 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
                         animate={startTextAnimation ? "visible" : {}}
                     >
                         <p className="select-none font-customC text-2xl">Introduction</p>
-                        <p className="text-base text-gray-300 mt-2 w-[50%] translate-y-2 tracking-wider">
-                            I'm a 4<sup>th</sup> year Computer Science student at Ontario Tech University.
-                            I am passionate about Software Development, Data Analysis, and Robotics. My
-                            portfolio showcases my skill set along with the projects I've worked on over the years.
-                            For a more detailed overview or additional information, please visit my socials or send me an email via the{" "}
+                        <p className="text-base text-gray-300 mt-2 w-[50%] translate-y-2 tracking-wider select-none">
+                            I'm a 4th-year Computer Science student at Ontario Tech University with a strong passion for Software Development, Data Analysis, and Robotics.
+                            My portfolio highlights my skills and features a collection of projects I've worked on throughout my academic and professional journey.
+                            For a deeper dive into my work or to get in touch, feel free to explore my socials or reach out directly through the{" "}
                             <Link
                                 to={"contact"}
                                 smooth={true}
@@ -173,7 +172,8 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
                     </motion.span>
 
                     {/* Skills (entire wheel including middle icon) */}
-                    <div className="flex relative left-1/2 top-[10%] w-[400px] aspect-square border border-neutral-500 rounded-full translate-x-1/3 -translate-y-[47%]">
+                    <div className="flex relative left-1/2 top-[10%] w-[400px] aspect-square border border-neutral-500 rounded-full translate-x-1/3 -translate-y-[55%]">
+
                         {/* Inner Circle (Center Icon) */}
                         <div className="flex w-64 aspect-square m-auto border border-neutral-500 rounded-full">
                             <div className="w-[6rem] m-auto p-[0.2rem] aspect-square rounded-full">
@@ -213,7 +213,7 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
                                 startRingAnimation
                                     ? {
                                         ease: "linear",
-                                        duration: 55,
+                                        duration: 60,
                                         repeat: Infinity,
                                     }
                                     : {}
@@ -236,7 +236,7 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
                                         style={{
                                             transform: `rotate(${angle}deg) translateY(-${radius}) rotate(-${angle}deg)`,
                                             filter:
-                                                ic.id % 2 === 0
+                                                ic.id % 2 != 0
                                                     ? "drop-shadow(1px 1px 0px #B026FF)"
                                                     : "drop-shadow(1px 1px 0px #00FFFF)",
                                         }}
@@ -254,7 +254,7 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
                                                         startRingAnimation
                                                             ? {
                                                                 ease: "linear",
-                                                                duration: 55,
+                                                                duration: 60,
                                                                 repeat: Infinity,
                                                             }
                                                             : {}
@@ -264,6 +264,7 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
                                                         src={ic.icon_path}
                                                         className={`m-auto select-none ${ic.title === "Linux" ? "h-10 -translate-y-[2px]" : ""} ${ic.title === "Github" ? "translate-y-[1px]" : ""}`}
                                                     />
+
                                                     {/* Tooltip */}
                                                     <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:flex items-center justify-center select-none">
                                                         <div className="bg-slate-900 font-bold font-customC text-white text-sm rounded px-3 py-1 whitespace-nowrap select-none">
@@ -281,7 +282,7 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
 
 
                     {/* Text Continued */}
-                    <motion.span className="text-base text-gray-300 w-[50%] -translate-y-40 tracking-wider font-bold"
+                    <motion.span className="text-base text-gray-300 w-[50%] -translate-y-48 tracking-wider font-bold"
                         variants={textVariants}
                         initial="initial"
                         animate={startTextAnimation ? "visible" : {}}

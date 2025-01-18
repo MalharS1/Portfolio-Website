@@ -122,7 +122,7 @@ function Cards({ id_nav }: CardsProps) {
 
     return (
         <section id={id_nav} className="relative">
-            <div className="cards-container flex flex-col items-center overflow-hidden pt-12">
+            <div className="cards-container flex flex-col items-center overflow-hidden pt-12 select-none">
 
                 {/* scetion Title */}
                 <div className="flex items-center justify-center space-x-4 mb-8">
@@ -165,9 +165,9 @@ function Cards({ id_nav }: CardsProps) {
                             ref={mergeRefs([ref, mRef])} // ref for scroll and mouse tracking
 
                             // project id used to alternate design
-                            className={`card bg-gray-900 border-4 bg-opacity-60 rounded-lg h-[15rem] w-[50rem] m-4 flex ${project.id % 2 === 0
-                                ? "flex-row-reverse border-t-slate-500 border-l-slate-500 border-r-slate-300 border-b-slate-300"
-                                : "flex-row border-r-slate-500 border-b-slate-500 border-t-slate-300 border-l-slate-300"
+                            className={`card bg-gray-900 border-2 bg-opacity-60 rounded-lg h-[15rem] w-[50rem] m-4 flex ${project.id % 2 === 0
+                                ? "flex-row-reverse  border-slate-300"
+                                : "flex-row border-slate-500"
                                 } items-center relative cursor-pointer`}
                             style={{
                                 backgroundImage: isActivated ? `url(${project.back_img_path})` : "none",

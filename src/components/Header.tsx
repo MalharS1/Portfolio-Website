@@ -107,8 +107,8 @@ function Header() {
                                     </RouterLink>
 
                                     {/* remove later  */}
-                                    <span className="absolute -translate-x-[155px] translate-y-[20px] w-[100%] rotate-[10deg] border-2"></span>
-                                    <span className="absolute -translate-x-[155px] translate-y-[20px] w-[100%] -rotate-[10deg] border-2"></span>
+                                    <span className="absolute -translate-x-[155px] translate-y-[20px] w-[100%] rotate-[10deg] border-2 bg-white"></span>
+                                    <span className="absolute -translate-x-[155px] translate-y-[20px] w-[100%] -rotate-[10deg] border-2 bg-white"></span>
                                 </>
 
                             ) : (
