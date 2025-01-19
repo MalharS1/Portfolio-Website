@@ -92,13 +92,13 @@ function Contact({ id_nav }: ContactProps) {
                     <div className="flex flex-col justify-center pr-10 mr-5 w-1/4 mt-11 space-y-20 ml-5 -translate-y-6">
                         <div className="flex justify-between w-full icnGrp">
                             <p className="Iline text-left">Github:</p>
-                            <a className="icn text-2xl text-right" href="https://github.com/MalharS1?tab=repositories" target="_blank" rel="noopener noreferrer">
+                            <a className="icn text-3xl text-right" href="https://github.com/MalharS1?tab=repositories" target="_blank" rel="noopener noreferrer">
                                 <FaGithub />
                             </a>
                         </div>
                         <div className="flex justify-between w-full icnGrp">
                             <p className="Iline text-left">LinkedIn:</p>
-                            <a className="icn text-2xl text-right" href="https://www.linkedin.com/in/malhar--singh" target="_blank" rel="noopener noreferrer">
+                            <a className="icn text-3xl text-right" href="https://www.linkedin.com/in/malhar--singh" target="_blank" rel="noopener noreferrer">
                                 <FaLinkedin />
                             </a>
                         </div>
@@ -132,13 +132,13 @@ function Contact({ id_nav }: ContactProps) {
                     <div className="flex flex-col justify-center pl-10 ml-5 w-1/4 mt-11 space-y-20 -translate-y-6">
                         <div className="flex justify-between w-full icnGrp">
                             <p className="Iline text-left">Email:</p>
-                            <a className="icn text-2xl text-right" href="mailto:malharsingh28@gmail.com">
+                            <a className="icn text-3xl text-right" href="mailto:malharsingh28@gmail.com">
                                 <MdEmail />
                             </a>
                         </div>
                         <div className="flex justify-between w-full icnGrp">
                             <p className="Iline text-left">Resume:</p>
-                            <a className="icn text-2xl text-right" href="/assets/Resume.pdf" download>
+                            <a className="icn text-3xl text-right" href="/assets/Resume.pdf" download>
                                 <FaFileDownload />
                             </a>
                         </div>

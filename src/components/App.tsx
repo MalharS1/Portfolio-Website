@@ -1,8 +1,8 @@
-import Header from './Header.tsx'
-import Cards from './Cards.tsx'
-import Contact from './Contact.tsx'
-import MeshBackground from './Background.tsx'
-import SideProjects from './Side_Projects.tsx'
+import Header from './Header.tsx';
+import Cards from './Cards.tsx';
+import Contact from './Contact.tsx';
+import MeshBackground from './Background.tsx';
+import SideProjects from './Side_Projects.tsx';
 import { HashRouter as Router, Route, Routes } from "react-router-dom";  // HashRouter better for only client side and no server
 
 function App() {
