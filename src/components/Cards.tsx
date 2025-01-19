@@ -66,41 +66,44 @@ function Cards({ id_nav }: CardsProps) {
             }
         ],
 
+
         // Slide 2
-        [
-            {
-                id: 4,
-                front_img_path: "/assets/card_front_img/rocket.png",
-                back_img_path: "/assets/card_back_img/rocket_big.png",
-                title: "PyGame Rocket Simulation",
-                git_link: "https://github.com/MalharS1/PyGame-Rocket-Simulation",
-                description: "This PyGame project explores a simplified rocket simulation. While a full-scale rocket simulation is beyond the scope for a third-year Computer Science student, this version captures key aspects of the physics behind rocket flight. It offers a hands-on approach to understanding fundamental concepts while providing an interactive and engaging experience."
-            },
-            {
-                id: 5,
-                front_img_path: "/assets/card_front_img/rocket.png",
-                back_img_path: "/assets/card_back_img/rocket_big.png",
-                title: "PyGame Rocket Simulation",
-                git_link: "https://github.com/MalharS1/PyGame-Rocket-Simulation",
-                description: "This PyGame project explores a simplified rocket simulation. While a full-scale rocket simulation is beyond the scope for a third-year Computer Science student, this version captures key aspects of the physics behind rocket flight. It offers a hands-on approach to understanding fundamental concepts while providing an interactive and engaging experience."
-            },
-            {
-                id: 6,
-                front_img_path: "/assets/card_front_img/rocket.png",
-                back_img_path: "/assets/card_back_img/rocket_big.png",
-                title: "PyGame Rocket Simulation",
-                git_link: "https://github.com/MalharS1/PyGame-Rocket-Simulation",
-                description: "This PyGame project explores a simplified rocket simulation. While a full-scale rocket simulation is beyond the scope for a third-year Computer Science student, this version captures key aspects of the physics behind rocket flight. It offers a hands-on approach to understanding fundamental concepts while providing an interactive and engaging experience."
-            },
-            {
-                id: 7,
-                front_img_path: "/assets/card_front_img/rocket.png",
-                back_img_path: "/assets/card_back_img/rocket_big.png",
-                title: "PyGame Rocket Simulation",
-                git_link: "https://github.com/MalharS1/PyGame-Rocket-Simulation",
-                description: "This PyGame project explores a simplified rocket simulation. While a full-scale rocket simulation is beyond the scope for a third-year Computer Science student, this version captures key aspects of the physics behind rocket flight. It offers a hands-on approach to understanding fundamental concepts while providing an interactive and engaging experience."
-            }
-        ]
+
+        // for testing
+        // [
+        //     {
+        //         id: 4,
+        //         front_img_path: "/assets/card_front_img/rocket.png",
+        //         back_img_path: "/assets/card_back_img/rocket_big.png",
+        //         title: "PyGame Rocket Simulation",
+        //         git_link: "https://github.com/MalharS1/PyGame-Rocket-Simulation",
+        //         description: "This PyGame project explores a simplified rocket simulation. While a full-scale rocket simulation is beyond the scope for a third-year Computer Science student, this version captures key aspects of the physics behind rocket flight. It offers a hands-on approach to understanding fundamental concepts while providing an interactive and engaging experience."
+        //     },
+        //     {
+        //         id: 5,
+        //         front_img_path: "/assets/card_front_img/rocket.png",
+        //         back_img_path: "/assets/card_back_img/rocket_big.png",
+        //         title: "PyGame Rocket Simulation",
+        //         git_link: "https://github.com/MalharS1/PyGame-Rocket-Simulation",
+        //         description: "This PyGame project explores a simplified rocket simulation. While a full-scale rocket simulation is beyond the scope for a third-year Computer Science student, this version captures key aspects of the physics behind rocket flight. It offers a hands-on approach to understanding fundamental concepts while providing an interactive and engaging experience."
+        //     },
+        //     {
+        //         id: 6,
+        //         front_img_path: "/assets/card_front_img/rocket.png",
+        //         back_img_path: "/assets/card_back_img/rocket_big.png",
+        //         title: "PyGame Rocket Simulation",
+        //         git_link: "https://github.com/MalharS1/PyGame-Rocket-Simulation",
+        //         description: "This PyGame project explores a simplified rocket simulation. While a full-scale rocket simulation is beyond the scope for a third-year Computer Science student, this version captures key aspects of the physics behind rocket flight. It offers a hands-on approach to understanding fundamental concepts while providing an interactive and engaging experience."
+        //     },
+        //     {
+        //         id: 7,
+        //         front_img_path: "/assets/card_front_img/rocket.png",
+        //         back_img_path: "/assets/card_back_img/rocket_big.png",
+        //         title: "PyGame Rocket Simulation",
+        //         git_link: "https://github.com/MalharS1/PyGame-Rocket-Simulation",
+        //         description: "This PyGame project explores a simplified rocket simulation. While a full-scale rocket simulation is beyond the scope for a third-year Computer Science student, this version captures key aspects of the physics behind rocket flight. It offers a hands-on approach to understanding fundamental concepts while providing an interactive and engaging experience."
+        //     }
+        // ]
     ];
 
 
