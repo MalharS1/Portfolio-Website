@@ -88,7 +88,7 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
             rotateX: [35, 0],
             rotateZ: [15, -15, 0],
             transition: {
-                delay: 0.2,
+                delay: 1.2,
                 duration: 0.8,
                 ease: "easeInOut",
             },

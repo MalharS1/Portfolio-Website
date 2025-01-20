@@ -53,15 +53,15 @@ function Header() {
     const navItemVariants = {
         left: {
             initial: { x: "-100vw", opacity: 0, backgroundColor: "rgba(0, 0, 0, 0)", textShadow: "0px 0px 0px rgba(0, 0, 0, 0)", filter: "drop-shadow(0px 0px 0px rgba(0, 0, 0, 0))" },
-            animate: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 180, damping: 25, delay: 1.7 } },
+            animate: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 180, damping: 25, delay: 1.3 } },
         },
         right: {
             initial: { x: "100vw", opacity: 0, backgroundColor: "rgba(0, 0, 0, 0)", textShadow: "0px 0px 0px rgba(0, 0, 0, 0)", filter: "drop-shadow(0px 0px 0px rgba(0, 0, 0, 0))" },
-            animate: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 180, damping: 25, delay: 1.7 } },
+            animate: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 180, damping: 25, delay: 1.3 } },
         },
         center: {
             initial: { y: "-100vh", opacity: 0 },
-            animate: { y: 0, opacity: 0.4, transition: { duration: 1.12, delay: 1.6 } },
+            animate: { y: 0, opacity: 0.4, transition: { duration: 1.12, delay: 1.3 } },
         },
     };
 
@@ -88,8 +88,7 @@ function Header() {
                             initial="initial"
                             animate="animate"
                             whileHover={{
-                                textShadow: "0px 0px 70px #03ffff",
-                                filter: "drop-shadow(3px 3px 2.5px #03ffff)",
+                                textShadow: "0px 0px 20px #03ffff, 0px 0px 2px #03ffff, 0px 0px 60px #03ffff",
                                 scale: 1.15,
                             }}
                             transition={{
@@ -127,17 +126,27 @@ function Header() {
             </motion.header>
 
             {/* Header (horizontal rule) */}
+
+            {/* hr: as width increases, animate in the gradient */}
             <motion.div
                 className="w-[65rem] mx-auto h-[0.10rem] rounded relative"
-                initial={{ opacity: 1 }}
+                initial={{
+                    background: "linear-gradient(to right, #03ffff 0%, #03ffff 0%, rgba(255, 255, 255, 0) 0%)",
+                    width: "0%",
+                }}
                 animate={{
+                    width: "65%",
                     background: firstLoad ? [
-                        "rgba(0, 0, 0, 0)",
                         "linear-gradient(to right, #03ffff 0%, #03ffff 0%, rgba(255, 255, 255, 0) 0%)",
-                        "linear-gradient(to right, #03ffff 0%, #FF69B4 100%, #FF69B4 100%)",
+                        "linear-gradient(to right, #03ffff 0%, #FF69B4 100%)",
                         "rgba(255, 255, 255, 1)",
                     ] : hr_bg,
-                    transition: { duration: firstLoad ? 2.5 : 0.2, ease: "easeInOut" },
+                }}
+                transition={{
+                    duration: firstLoad ? 1 : 0.2,
+                    delay: 0.35,
+                    ease: "easeInOut",
+                    times: [0, 0.87, 1],
                 }}
                 onAnimationComplete={() => setIsAnimated(true)}
             />
