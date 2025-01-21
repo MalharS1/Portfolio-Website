@@ -282,7 +282,7 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
 
 
                     {/* Text Continued */}
-                    <motion.span className="text-base text-gray-300 w-[50%] -translate-y-48 tracking-wider font-bold"
+                    <motion.span className="text-base text-gray-300 w-[50%] -translate-y-56 tracking-wider font-bold"
                         variants={textVariants}
                         initial="initial"
                         animate={startTextAnimation ? "visible" : {}}

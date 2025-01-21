@@ -146,6 +146,7 @@ function Header() {
                 }}
                 animate={{
                     width: "65%",
+                    // width: "50%",
                     background: firstLoad ? [
                         "linear-gradient(to right, #03ffff 0%, #03ffff 0%, rgba(255, 255, 255, 0) 0%)",
                         "linear-gradient(to right, #03ffff 0%, #FF69B4 100%)",

@@ -6,6 +6,12 @@ import SideProjects from './Side_Projects.tsx';
 import { HashRouter as Router, Route, Routes } from "react-router-dom";  // HashRouter better for only client side and no server
 
 function App() {
+
+  // to scroll page to top on reload
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
+
   return (
     <Router>
       <Routes>
