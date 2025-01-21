@@ -74,6 +74,10 @@ function Header() {
                 animate={{ backgroundColor: scrollColour }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
             >
+
+                {/* remove if normal is preferred */}
+
+
                 {/* <motion.div className={`bg-black ${backdropBlur} h-[40px] w-[80vw] absolute rounded-full`}
                     initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
                     animate={{ backgroundColor: scrollColour }}

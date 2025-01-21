@@ -172,10 +172,10 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
                     </motion.span>
 
                     {/* Skills (entire wheel including middle icon) */}
-                    <div className="flex relative left-1/2 top-[10%] w-[400px] aspect-square border border-neutral-500 rounded-full translate-x-1/3 -translate-y-[55%]">
+                    <div className="flex relative left-1/2 top-[10%] w-[450px] aspect-square border border-neutral-500 rounded-full translate-x-[23%] -translate-y-[55%]">
 
                         {/* Inner Circle (Center Icon) */}
-                        <div className="flex w-64 aspect-square m-auto border border-neutral-500 rounded-full">
+                        <div className="flex w-[256px] aspect-square m-auto border border-neutral-500 rounded-full">
                             <div className="w-[6rem] m-auto p-[0.2rem] aspect-square rounded-full">
                                 <div className="flex flex-col items-center justify-center w-full h-full">
                                     <svg width="0" height="0">
@@ -227,7 +227,7 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
                                     ? index * (360 / (icons.length - 9))
                                     : index * (360 / Math.min(icons.length, 9));
 
-                                const radius = isInnerCircle ? '8rem' : '12.5rem';
+                                const radius = isInnerCircle ? '8rem' : '14rem';
 
                                 return (
                                     <div
