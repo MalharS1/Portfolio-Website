@@ -75,7 +75,7 @@ function Contact({ id_nav }: ContactProps) {
     const maxChar = 200;
 
     return (
-        <section id={id_nav} className="mt-3 pt-16 bg-gradient-to-t from-slate-950 from-20% h-[40rem] flex items-center justify-center z-[15]">
+        <section id={id_nav} className="mt-[68px] pt-10 bg-gradient-to-t from-slate-950 from-20% h-[40rem] flex items-center justify-center z-[15]">
             <motion.div ref={ref} className="flex w-full max-w-6xl mb-20 flex-col items-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isInView ? 1 : 0 }}

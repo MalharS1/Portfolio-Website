@@ -48,7 +48,7 @@ function Header() {
     // colour and blur if user is scrolling (separate because of animate)
     const scrollColour = scrollYProg >= 0.06 ? "rgba(0, 0, 0, 0.5)" : "rgba(0, 0, 0, 0)";
     const backdropBlur = scrollYProg >= 0.05 ? "backdrop-blur-sm" : "backdrop-blur-none";
-    const hr_bg = scrollYProg >= 0.015 ? "rgba(0, 0, 0, 0)" : "rgba(255, 255, 255, 1)";
+    const hr_bg = scrollYProg >= 0.012 ? "rgba(0, 0, 0, 0)" : "rgba(255, 255, 255, 1)";
 
     const navItemVariants = {
         left: {
@@ -74,6 +74,13 @@ function Header() {
                 animate={{ backgroundColor: scrollColour }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
             >
+                {/* <motion.div className={`bg-black ${backdropBlur} h-[40px] w-[80vw] absolute rounded-full`}
+                    initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
+                    animate={{ backgroundColor: scrollColour }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                ></motion.div> */}
+
+
                 {navigation.map((nav_item) =>
 
                     // to have no link for separator
@@ -126,7 +133,6 @@ function Header() {
             </motion.header>
 
             {/* Header (horizontal rule) */}
-
             {/* hr: as width increases, animate in the gradient */}
             <motion.div
                 className="w-[65rem] mx-auto h-[0.10rem] rounded relative"
@@ -144,7 +150,7 @@ function Header() {
                 }}
                 transition={{
                     duration: firstLoad ? 1 : 0.2,
-                    delay: 0.35,
+                    delay: firstLoad ? 0.35 : undefined,
                     ease: "easeInOut",
                     times: [0, 0.87, 1],
                 }}
