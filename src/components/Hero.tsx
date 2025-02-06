@@ -280,7 +280,6 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
                         </motion.ul>
                     </div>
 
-
                     {/* Text Continued */}
                     <motion.span className="text-base text-gray-300 w-[50%] -translate-y-56 tracking-wider font-bold"
                         variants={textVariants}

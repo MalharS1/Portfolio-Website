@@ -4,7 +4,7 @@
 
 /* Form and Navigation Links */
 .frm {
-    @apply p-2 rounded flex justify-center w-[35rem] h-10 mt-1 mb-4;
+    @apply p-2 rounded flex justify-center w-[35rem] h-10 mt-1 mb-4 bg-[#2b2a33];
 }
 
 .frm-txt {

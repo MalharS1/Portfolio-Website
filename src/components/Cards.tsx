@@ -185,10 +185,10 @@ function Cards({ id_nav }: CardsProps) {
 
                 {/* Section Title */}
                 <div className="flex items-center justify-center space-x-4 mb-8">
-                    <hr className="w-[22rem] h-[0.15rem] rounded bg-gray-200 border-0 dark:bg-gray-700" />
+                    <hr className="w-[22rem] h-[0.15rem] rounded border-0 bg-gray-600" />
                     <div className="translate-x-1 font-customA tracking-wide text-3xl font-extrabold text-center">Pro</div>
                     <div className="-translate-x-2 font-customA tracking-wide text-3xl font-extrabold text-center">jects</div>
-                    <hr className="w-[22rem] h-[0.15rem] rounded bg-gray-200 border-0 dark:bg-gray-700" />
+                    <hr className="w-[22rem] h-[0.15rem] rounded border-0 bg-gray-600" />
                 </div>
 
                 {/* Swiper Container */}

@@ -82,9 +82,9 @@ function Contact({ id_nav }: ContactProps) {
                 transition={{ duration: 2, ease: "linear" }}
             >
                 <div className="flex items-center justify-center space-x-4 mb-8">
-                    <hr className="w-[20rem] h-[0.15rem] rounded bg-gray-200 border-0 dark:bg-gray-700" />
+                    <hr className="w-[20rem] h-[0.15rem] rounded border-0 bg-gray-600" />
                     <div className="font-customA tracking-wide text-3xl font-extrabold text-center select-none">Contact Me</div>
-                    <hr className="w-[20rem] h-[0.15rem] rounded bg-gray-200 border-0 dark:bg-gray-700" />
+                    <hr className="w-[20rem] h-[0.15rem] rounded border-0 bg-gray-600" />
                 </div>
 
                 <div className="flex w-full">
