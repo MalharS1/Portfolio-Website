@@ -287,7 +287,7 @@ function Hero({ id_nav, isAnimated }: HeroProps) {
                         animate={startTextAnimation ? "visible" : {}}
                     >
                         <sup className="block text-red-400 text-2xl font-extrabold translate-y-9">*</sup>
-                        <p className="ml-3 text-lg font-customC">Hover over individual rotating skills and Projects for more informtaion</p>
+                        <p className="ml-3 text-lg font-customC">Hover over individual rotating skills and Projects for more information</p>
                     </motion.span>
                 </motion.div>
             </div>
